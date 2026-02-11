@@ -1,9 +1,5 @@
 package com.my.spring.model;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 public class Employee {
 
 	private int id;
@@ -12,56 +8,18 @@ public class Employee {
 
 	private Address address;
 
-	private List<Integer> myList;
-
-	private Set<Integer> setOfContacts;
-
-	private Map<Integer, String> map;
-
 	public Employee() {
 		super();
 		System.out.println("Employee.Employee()");
 
-		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int id, String name, String gender, Address address, List<Integer> myList,
-			Set<Integer> setOfContacts, Map<Integer, String> map) {
+	public Employee(int id, String name, String gender, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.address = address;
-		this.myList = myList;
-		this.setOfContacts = setOfContacts;
-		this.map = map;
-	}
-
-	public List<Integer> getMyList() {
-		return myList;
-	}
-
-	public void setMyList(List<Integer> myList) {
-		this.myList = myList;
-		System.out.println("Employee.setMyList()");
-	}
-
-	public Set<Integer> getSetOfContacts() {
-		return setOfContacts;
-	}
-
-	public void setSetOfContacts(Set<Integer> setOfContacts) {
-		this.setOfContacts = setOfContacts;
-		System.out.println("Employee.setSetOfContacts()");
-	}
-
-	public Map<Integer, String> getMap() {
-		return map;
-	}
-
-	public void setMap(Map<Integer, String> map) {
-		this.map = map;
-		System.out.println("Employee.setMap()");
 	}
 
 	public Address getAddress() {
@@ -89,7 +47,6 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 		System.out.println("Employee.setName()");
-
 	}
 
 	public String getGender() {
@@ -99,13 +56,11 @@ public class Employee {
 	public void setGender(String gender) {
 		this.gender = gender;
 		System.out.println("Employee.setGender()");
-
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", myList="
-				+ myList + ", setOfContacts=" + setOfContacts + ", map=" + map + "]";
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + "]";
 	}
 
 }
