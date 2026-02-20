@@ -1,24 +1,25 @@
 package com.my.spring;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import java.util.List;
 
-import com.my.spring.model.Address;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.my.spring.model.Employee;
+import com.my.spring.rep.EmployeeDao;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		ApplicationContext ioc = new AnnotationConfigApplicationContext("com.my.spring.model");
-
-		Employee emp = ioc.getBean(Employee.class);
-		Address add = ioc.getBean(Address.class);
-
-		emp.setName("Sunny");
-
-		System.out.println(emp);
-		System.out.println(add);
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("application.xml");
+		EmployeeDao edao = ioc.getBean("edao", EmployeeDao.class);
+		Employee emp1 = new Employee(2, "yash raj", "Male", 88000);
+//		edao.saveEmployee(emp1);
+//		edao.updateEmployee(emp1);
+//		edao.deleteEmployee(2);
+		List<Employee> allEmp = edao.getAllEmp();
+		System.out.println(allEmp);
 
 	}
 
