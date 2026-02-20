@@ -3,7 +3,6 @@ package com.my.spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.my.spring.model.Address;
 import com.my.spring.model.Employee;
 
 public class Main {
@@ -13,12 +12,8 @@ public class Main {
 		ApplicationContext ioc = new AnnotationConfigApplicationContext("com.my.spring.model");
 
 		Employee emp = ioc.getBean(Employee.class);
-		Address add = ioc.getBean(Address.class);
-
-		emp.setName("Sunny");
 
 		System.out.println(emp);
-		System.out.println(add);
 
 	}
 
